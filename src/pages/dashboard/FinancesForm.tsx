@@ -1,5 +1,6 @@
-import { useUser } from "@clerk/clerk-react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useUser } from "@clerk/clerk-react";
+
 import { useFinanceContext } from "../../contexts/financeContext";
 
 type Inputs = {
@@ -31,7 +32,7 @@ export const FinancesForm = () => {
     reset();
   };
   return (
-    <div className="mb-5 text-teal-200">
+    <div className=" text-teal-200">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label className="font-semibold block mb-1">Description:</label>

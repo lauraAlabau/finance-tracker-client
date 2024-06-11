@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMemo, useState } from "react";
+import { useTable, Column, CellProps } from "react-table";
+
 import {
   FinanceRecord,
   useFinanceContext,
 } from "../../contexts/financeContext";
-import { useTable, Column, CellProps } from "react-table";
 
 interface EditableCellProps extends CellProps<FinanceRecord> {
   updateRecord: (rowIndex: number, columnId: string, value: any) => void;
@@ -129,7 +130,7 @@ export const FinancesTable = () => {
     });
 
   return (
-    <div className="my-5 overflow-x-auto">
+    <div className="overflow-x-auto">
       <table
         {...getTableProps()}
         className="w-full border-collapse mt-5 shadow-md"
