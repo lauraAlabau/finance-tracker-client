@@ -9,7 +9,7 @@ import { Home } from "./pages/home";
 function App() {
   return (
     <Router>
-      <div className="w-screen h-screen flex flex-col items-center bg-slate-950 text-slate-50 overflow-hidden">
+      <div className="w-screen lg:h-screen flex flex-col items-center bg-slate-950 text-slate-50 lg:overflow-hidden min-h-screen ">
         <Routes>
           <Route
             path="/"

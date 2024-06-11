@@ -65,16 +65,16 @@ export const Dashboard = () => {
 
   return (
     <div className="lg:w-4/5 lg:my-16 my-6 w-full px-6">
-      <div className="flex  lg:gap-20 gap-4 justify-center items-center">
+      <div className="flex lg:gap-20 gap-4 justify-center items-center">
         <TotalCard amount={totalPrevMonth} text="Previous Month" />
         <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
         <TotalCard amount={totalAverage} text="Overall Budget" />
       </div>
-      <div className="flex gap-4 flex-col lg:flex-row lg:gap-20 lg:my-20 my-4 lg:h-[60vh] h-[75vh]">
+      <div className="flex gap-4 flex-col lg:flex-row lg:gap-20 lg:my-20 my-4 lg:h-[60vh] ">
         <div className="lg:w-1/4 w-full">
           <FinancesForm />
         </div>
-        <div className="lg:w-3/4 h-full overflow-y-auto w-full">
+        <div className="lg:w-3/4 h-full lg:overflow-y-auto w-full">
           <FinancesTable />
         </div>
       </div>
