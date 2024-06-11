@@ -25,7 +25,8 @@ interface FinanceContextType {
   deleteRecord: (id: string) => void;
 }
 
-const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "https://finance-tracker-srv.vercel.app/";
 
 export const FinanceContext = createContext<FinanceContextType | undefined>(
   undefined
@@ -39,7 +40,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
     if (!user) return;
 
     const response = await fetch(
-      `${BASE_URL}/finances-record/getAllByUserID/${user?.id}`
+      `${BASE_URL}finances-record/getAllByUserID/${user?.id}`
     );
 
     if (response.ok) {
@@ -53,7 +54,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
   }, [user]);
 
   const addRecord = async (record: FinanceRecord) => {
-    const response = await fetch("${BASE_URL}/finances-record", {
+    const response = await fetch(`${BASE_URL}finances-record`, {
       method: "POST",
       body: JSON.stringify(record),
       headers: {
@@ -72,7 +73,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const updateRecord = async (id: string, newRecord: FinanceRecord) => {
-    const response = await fetch(`${BASE_URL}/finances-record/${id}`, {
+    const response = await fetch(`${BASE_URL}finances-record/${id}`, {
       method: "PUT",
       body: JSON.stringify(newRecord),
       headers: {
@@ -99,7 +100,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const deleteRecord = async (id: string) => {
-    const response = await fetch(`${BASE_URL}/finances-record/${id}`, {
+    const response = await fetch(`${BASE_URL}finances-record/${id}`, {
       method: "DELETE",
     });
 
