@@ -40,7 +40,8 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
     if (!user) return;
 
     const response = await fetch(
-      `${BASE_URL}finances-record/getAllByUserID/${user?.id}`
+      `${BASE_URL}finances-record/getAllByUserID/${user?.id}`,
+      { mode: "no-cors" }
     );
 
     if (response.ok) {
