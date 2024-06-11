@@ -45,6 +45,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
     </div>
   );
 };
+
 export const FinancesTable = () => {
   const { records, updateRecord, deleteRecord } = useFinanceContext();
 
