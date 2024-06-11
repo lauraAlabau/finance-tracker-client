@@ -40,14 +40,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
     if (!user) return;
 
     const response = await fetch(
-      `${BASE_URL}finances-record/getAllByUserID/${user?.id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
+      `${BASE_URL}finances-record/getAllByUserID/${user?.id}`
     );
 
     if (response.ok) {
