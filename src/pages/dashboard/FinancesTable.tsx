@@ -98,7 +98,9 @@ export const FinancesTable = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({
       columns,
-      data: records,
+      data: records.sort(
+        (a, b) => Date.parse(String(b.date)) - Date.parse(String(a.date))
+      ),
     });
 
   return (
