@@ -1,53 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useMemo, useState } from "react";
-import { useTable, Column, CellProps } from "react-table";
+import { useMemo } from "react";
+import { useTable, Column } from "react-table";
 
 import {
   FinanceRecord,
   useFinanceContext,
 } from "../../contexts/financeContext";
-import { EditableNumberCell, EditableTextCell } from "../../components/cells";
+import {
+  EditableNumberCell,
+  EditableSelectCell,
+  EditableTextCell,
+} from "../../components/cells";
 import { formatDate } from "date-fns";
-
-interface EditableCellProps extends CellProps<FinanceRecord> {
-  updateRecord: (rowIndex: number, columnId: string, value: any) => void;
-  editable: boolean;
-}
-
-const EditableCell: React.FC<EditableCellProps> = ({
-  value: initialValue,
-  row,
-  column,
-  updateRecord,
-  editable,
-}) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState(initialValue);
-
-  const onBlur = () => {
-    setIsEditing(false);
-    updateRecord(row.index, column.id, value);
-  };
-
-  return (
-    <div
-      onClick={() => editable && setIsEditing(true)}
-      className={`${editable ? "cursor-pointer" : ""}`}
-    >
-      {isEditing ? (
-        <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          autoFocus
-          onBlur={onBlur}
-          className="w-full p-2.5 bg-transparent border border-teal-100 rounded-md text-slate-50"
-        />
-      ) : (
-        <div className="p-2.5 w-full">{String(value)}</div>
-      )}
-    </div>
-  );
-};
+import {
+  CATEGORIES_OPTIONS,
+  PAYMENT_METHOD_OPTIONS,
+} from "../../utils/contants";
 
 export const FinancesTable = () => {
   const { records, updateRecord, deleteRecord } = useFinanceContext();
@@ -85,10 +53,11 @@ export const FinancesTable = () => {
         Header: "Category",
         accessor: "category",
         Cell: (props) => (
-          <EditableCell
+          <EditableSelectCell
             {...props}
             updateRecord={updateCellRecord}
             editable={true}
+            options={CATEGORIES_OPTIONS}
           />
         ),
       },
@@ -96,10 +65,11 @@ export const FinancesTable = () => {
         Header: "Payment",
         accessor: "payment",
         Cell: (props) => (
-          <EditableCell
+          <EditableSelectCell
             {...props}
             updateRecord={updateCellRecord}
             editable={true}
+            options={PAYMENT_METHOD_OPTIONS}
           />
         ),
       },

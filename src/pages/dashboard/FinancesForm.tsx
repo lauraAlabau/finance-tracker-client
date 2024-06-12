@@ -2,6 +2,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useUser } from "@clerk/clerk-react";
 
 import { useFinanceContext } from "../../contexts/financeContext";
+import {
+  CATEGORIES_OPTIONS,
+  PAYMENT_METHOD_OPTIONS,
+} from "../../utils/contants";
 
 type Inputs = {
   description: string;
@@ -69,30 +73,11 @@ export const FinancesForm = () => {
             <option value="" hidden>
               Select a Category
             </option>
-            <option value="food" className="bg-slate-900 text-slate-50">
-              Food
-            </option>
-            <option value="rent" className="bg-slate-900 text-slate-50">
-              Rent
-            </option>
-            <option value="pets" className="bg-slate-900 text-slate-50">
-              Pets
-            </option>
-            <option value="salary" className="bg-slate-900 text-slate-50">
-              Salary
-            </option>
-            <option value="utilities" className="bg-slate-900 text-slate-50">
-              Utilities
-            </option>
-            <option
-              value="entertainment"
-              className="bg-slate-900 text-slate-50"
-            >
-              Entertainment
-            </option>
-            <option value="other" className="bg-slate-900 text-slate-50">
-              Other
-            </option>
+            {CATEGORIES_OPTIONS.map((option) => (
+              <option value={option} className="bg-slate-900 text-slate-50">
+                {option}
+              </option>
+            ))}
           </select>
         </div>
         <div className="sm:w-1/2 sm:pl-4 lg:w-full lg:p-0">
@@ -107,15 +92,11 @@ export const FinancesForm = () => {
             <option value="" hidden>
               Select a payment Method
             </option>
-            <option value="card" className="bg-slate-900 text-slate-50">
-              Credit Card
-            </option>
-            <option value="cash" className="bg-slate-900 text-slate-50">
-              Cash
-            </option>
-            <option value="transfer" className="bg-slate-900 text-slate-50">
-              Bank Transfer
-            </option>
+            {PAYMENT_METHOD_OPTIONS.map((option) => (
+              <option value={option} className="bg-slate-900 text-slate-50">
+                {option}
+              </option>
+            ))}
           </select>
         </div>
         <button
