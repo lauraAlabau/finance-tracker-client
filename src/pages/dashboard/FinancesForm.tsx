@@ -32,10 +32,13 @@ export const FinancesForm = () => {
     reset();
   };
   return (
-    <div className=" text-teal-200">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label className="font-semibold block mb-1">Description:</label>
+    <div className="text-teal-200 ">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="sm:flex sm:flex-wrap sm:justify-between"
+      >
+        <div className="sm:w-1/2 sm:pr-4 lg:w-full lg:p-0">
+          <label className="block mb-1 font-semibold">Description:</label>
           <input
             type="text"
             required
@@ -44,7 +47,7 @@ export const FinancesForm = () => {
             {...register("description")}
           />
         </div>
-        <div>
+        <div className="sm:w-1/2 sm:pl-4 lg:w-full lg:p-0">
           <label>Amount:</label>
           <input
             type="number"
@@ -54,7 +57,7 @@ export const FinancesForm = () => {
             {...register("amount")}
           />
         </div>
-        <div>
+        <div className="lg:w-full sm:w-1/2 sm:pr-4 lg:p-0">
           <label>Category:</label>
           <select
             required
@@ -92,7 +95,7 @@ export const FinancesForm = () => {
             </option>
           </select>
         </div>
-        <div>
+        <div className="sm:w-1/2 sm:pl-4 lg:w-full lg:p-0">
           <label>Payment Method:</label>
           <select
             required
@@ -117,7 +120,7 @@ export const FinancesForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-teal-600 text-slate-50 border-none px-4 py-2 m-1 rounded cursor-pointer transition duration-300 ease-in-out  hover:bg-teal-500 "
+          className="px-4 py-2 m-1 transition duration-300 ease-in-out bg-teal-600 border-none rounded cursor-pointer text-slate-50 hover:bg-teal-500 "
         >
           Add Record
         </button>

@@ -6,6 +6,8 @@ import {
   FinanceRecord,
   useFinanceContext,
 } from "../../contexts/financeContext";
+import { EditableNumberCell, EditableTextCell } from "../../components/cells";
+import { formatDate } from "date-fns";
 
 interface EditableCellProps extends CellProps<FinanceRecord> {
   updateRecord: (rowIndex: number, columnId: string, value: any) => void;
@@ -26,6 +28,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
     setIsEditing(false);
     updateRecord(row.index, column.id, value);
   };
+
   return (
     <div
       onClick={() => editable && setIsEditing(true)}
@@ -60,7 +63,7 @@ export const FinancesTable = () => {
         Header: "Description",
         accessor: "description",
         Cell: (props) => (
-          <EditableCell
+          <EditableTextCell
             {...props}
             updateRecord={updateCellRecord}
             editable={true}
@@ -71,7 +74,7 @@ export const FinancesTable = () => {
         Header: "Amount",
         accessor: "amount",
         Cell: (props) => (
-          <EditableCell
+          <EditableNumberCell
             {...props}
             updateRecord={updateCellRecord}
             editable={true}
@@ -104,11 +107,9 @@ export const FinancesTable = () => {
         Header: "Date",
         accessor: "date",
         Cell: (props) => (
-          <EditableCell
-            {...props}
-            updateRecord={updateCellRecord}
-            editable={false}
-          />
+          <div className="p-2.5 w-full">
+            {formatDate(props.value, "dd MMM yyyy")}
+          </div>
         ),
       },
       {
@@ -134,7 +135,7 @@ export const FinancesTable = () => {
     <div className="overflow-x-auto">
       <table
         {...getTableProps()}
-        className="w-full border-collapse mt-5 shadow-md"
+        className="w-full mt-5 border-collapse shadow-md"
       >
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -142,7 +143,7 @@ export const FinancesTable = () => {
               {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps()}
-                  className="py-3 px-4 first-of-type:rounded-tl-md last-of-type:rounded-tr-md    text-left bg-teal-800 text-teal-50 text-base"
+                  className="px-4 py-3 text-base text-left bg-teal-800 first-of-type:rounded-tl-md last-of-type:rounded-tr-md text-teal-50"
                 >
                   {column.render("Header")}
                 </th>
@@ -156,10 +157,10 @@ export const FinancesTable = () => {
             return (
               <tr
                 {...row.getRowProps()}
-                className=" border-b border-teal-800/40 bg-teal-800/10"
+                className="border-b border-teal-800/40 bg-teal-800/10"
               >
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className="py-3 px-4 text-left">
+                  <td {...cell.getCellProps()} className="px-4 py-3 text-left">
                     {cell.render("Cell")}
                   </td>
                 ))}
