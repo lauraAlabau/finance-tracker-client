@@ -41,8 +41,8 @@ export const FinancesForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="sm:flex sm:flex-wrap sm:justify-between"
       >
-        <div className="sm:w-1/2 sm:pr-4 lg:w-full lg:p-0">
-          <label className="block mb-1 font-semibold">Description:</label>
+        <div className="sm:w-1/2 sm:pr-4 lg:w-1/4 lg:pr-4">
+          <label>Description:</label>
           <input
             type="text"
             required
@@ -51,7 +51,7 @@ export const FinancesForm = () => {
             {...register("description")}
           />
         </div>
-        <div className="sm:w-1/2 sm:pl-4 lg:w-full lg:p-0">
+        <div className="sm:w-1/2 sm:pl-4 lg:w-1/4 lg:px-2">
           <label>Amount:</label>
           <input
             type="number"
@@ -61,7 +61,7 @@ export const FinancesForm = () => {
             {...register("amount")}
           />
         </div>
-        <div className="lg:w-full sm:w-1/2 sm:pr-4 lg:p-0">
+        <div className="lg:w-1/4 sm:w-1/2 sm:pr-4 lg:px-2">
           <label>Category:</label>
           <select
             required
@@ -80,7 +80,7 @@ export const FinancesForm = () => {
             ))}
           </select>
         </div>
-        <div className="sm:w-1/2 sm:pl-4 lg:w-full lg:p-0">
+        <div className="sm:w-1/2 sm:pl-4 lg:w-1/4 lg:pl-4">
           <label>Payment Method:</label>
           <select
             required

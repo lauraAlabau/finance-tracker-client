@@ -8,8 +8,8 @@
 
 *::-webkit-scrollbar-track {
   background: rgba(17, 94, 89, 0.4);
-  border-radius: 4px;
-  margin-top: 70px;
+  /* border-radius: 4px; */
+  /* margin-top: 70px; */
 }
 
 *::-webkit-scrollbar-thumb {

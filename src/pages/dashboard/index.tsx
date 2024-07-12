@@ -64,19 +64,23 @@ export const Dashboard = () => {
   }, [records]);
 
   return (
-    <div className="lg:w-4/5 lg:my-16 my-6 w-full px-6">
-      <div className="flex lg:gap-20 gap-4 justify-center items-center">
-        <TotalCard amount={totalPrevMonth} text="Previous Month" />
-        <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
-        <TotalCard amount={totalAverage} text="Overall Budget" />
+    <div>
+      <div className="grid grid-cols-3 gap-4 mt-8 mb-4">
+        <div className="flex items-center justify-center h-24 rounded">
+          <TotalCard amount={totalPrevMonth} text="Previous Month" />
+        </div>
+        <div className="flex items-center justify-center h-24 rounded">
+          <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
+        </div>
+        <div className="flex items-center justify-center h-24 rounded">
+          <TotalCard amount={totalAverage} text="Overall Budget" />
+        </div>
       </div>
-      <div className="flex gap-4 flex-col lg:flex-row lg:gap-20 lg:my-20 my-4 lg:h-[60vh] ">
-        <div className="lg:w-1/4 w-full">
-          <FinancesForm />
-        </div>
-        <div className="lg:w-3/4 h-full lg:overflow-y-auto w-full">
-          <FinancesTable />
-        </div>
+      <div className="w-full h-full mb-4 rounded lg:mt-20 lg:overflow-y-auto">
+        <FinancesForm />
+      </div>
+      <div className="w-full h-full mb-4 rounded lg:mt-10 lg:overflow-y-auto">
+        <FinancesTable />
       </div>
     </div>
   );
