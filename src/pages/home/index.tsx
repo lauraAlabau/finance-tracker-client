@@ -2,8 +2,8 @@ import { SignInButton, SignUpButton } from "@clerk/clerk-react";
 
 export const Home = () => {
   return (
-    <div className="flex flex-col items-center my-auto">
-      <div className="lg:text-9xl text-6xl font-bold p-20 text-center text-teal-50/90 lg:-mt-60 -mt-32 ">
+    <div className="flex flex-col items-center md:pt-96">
+      <div className="p-20 -mt-32 text-6xl font-bold text-center lg:text-9xl text-teal-50/90 lg:-mt-60 ">
         Record your expenses and income easily
       </div>
       <div className="flex gap-8 text-xl font-semibold">
