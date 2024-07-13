@@ -34,7 +34,7 @@ export const EditableNumberCell = ({
           autoFocus
           type="number"
           onBlur={onBlur}
-          className="max-w-20 p-2.5 bg-cyan-950 rounded-md text-slate-50 focus-visible:ring-0 focus-visible:outline-0"
+          className="max-w-20 p-2.5 bg-transparent  text-slate-50 focus-visible:ring-0 focus-visible:outline-0"
         />
       ) : (
         <div
