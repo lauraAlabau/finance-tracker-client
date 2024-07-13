@@ -37,7 +37,14 @@ export const EditableNumberCell = ({
           className="max-w-20 p-2.5 bg-cyan-950 rounded-md text-slate-50 focus-visible:ring-0 focus-visible:outline-0"
         />
       ) : (
-        <div className="p-2.5 w-full">{String(value)}</div>
+        <div
+          className={`${
+            value < 0 ? "text-red-400" : "text-green-400"
+          } p-2.5 w-full `}
+        >
+          {value < 0 ? "- " : "+ "}
+          {String(Math.abs(value))}
+        </div>
       )}
     </div>
   );

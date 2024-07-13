@@ -10,14 +10,13 @@ import {
   EditableNumberCell,
   EditableSelectCell,
   EditableTextCell,
-} from "../../components/cells";
+} from "../cells";
 import { formatDate } from "date-fns";
 import {
   CATEGORIES_OPTIONS,
   PAYMENT_METHOD_OPTIONS,
 } from "../../utils/contants";
-
-export const FinancesTable = () => {
+const Table = () => {
   const { records, updateRecord, deleteRecord } = useFinanceContext();
 
   const updateCellRecord = (rowIndex: number, columnId: string, value: any) => {
@@ -25,7 +24,7 @@ export const FinancesTable = () => {
     updateRecord(id ?? "", { ...records[rowIndex], [columnId]: value });
   };
 
-  const columns: Array<Column<FinanceRecord>> = useMemo(
+  const columns: Column<FinanceRecord>[] = useMemo(
     () => [
       {
         Header: "Description",
@@ -158,3 +157,4 @@ export const FinancesTable = () => {
     </div>
   );
 };
+export default Table;
