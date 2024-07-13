@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavbarProps } from "../navbar";
 
 const Sidebar = ({
   sideMenuIsExpand,
 }: Pick<NavbarProps, "sideMenuIsExpand">) => {
+  const location = useLocation();
   return (
     <aside
       id="logo-sidebar"
@@ -17,7 +18,11 @@ const Sidebar = ({
           <li>
             <Link
               to="/"
-              className="flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group"
+              className={`flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group ${
+                location.pathname === "/"
+                  ? "border-r-4 border-cyan-400 bg-[#0B1739]"
+                  : ""
+              }`}
             >
               <svg
                 className="w-5 h-5 transition duration-75 text-cyan-400 group-hover:text-white"
@@ -35,7 +40,11 @@ const Sidebar = ({
           <li>
             <Link
               to="/incomes"
-              className="flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group"
+              className={`flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group ${
+                location.pathname === "/incomes"
+                  ? "border-r-4 border-cyan-400 bg-[#0B1739]"
+                  : ""
+              }`}
             >
               <svg
                 className="w-5 h-5 transition duration-75 text-cyan-400 group-hover:text-white"
@@ -58,7 +67,11 @@ const Sidebar = ({
           <li>
             <Link
               to="/expenses"
-              className="flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group"
+              className={`flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group ${
+                location.pathname === "/expenses"
+                  ? "border-r-4 border-cyan-400 bg-[#0B1739]"
+                  : ""
+              }`}
             >
               <svg
                 className="w-5 h-5 transition duration-75 text-cyan-400 group-hover:text-white"
