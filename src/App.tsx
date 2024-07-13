@@ -5,6 +5,8 @@ import { Dashboard } from "./pages/dashboard";
 import { FinanceProvider } from "./contexts/financeContext";
 import { Home } from "./pages/home";
 import GenericLayout from "./components/genericLayout";
+import { Incomes } from "./pages/incomes";
+import { Expenses } from "./pages/expenses";
 
 function App() {
   return (
@@ -25,6 +27,34 @@ function App() {
                 <SignedOut>
                   <Home />
                 </SignedOut>
+              </>
+            }
+          />
+          <Route
+            path="/incomes"
+            element={
+              <>
+                <SignedIn>
+                  <FinanceProvider>
+                    <GenericLayout>
+                      <Incomes />
+                    </GenericLayout>
+                  </FinanceProvider>
+                </SignedIn>
+              </>
+            }
+          />
+          <Route
+            path="/expenses"
+            element={
+              <>
+                <SignedIn>
+                  <FinanceProvider>
+                    <GenericLayout>
+                      <Expenses />
+                    </GenericLayout>
+                  </FinanceProvider>
+                </SignedIn>
               </>
             }
           />

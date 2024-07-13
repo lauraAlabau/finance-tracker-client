@@ -71,7 +71,7 @@ export const Dashboard = () => {
       </div>
 
       <div className="w-full h-full mb-4 rounded lg:mt-20 lg:overflow-y-auto">
-        <Table />
+        <Table records={records} />
       </div>
     </div>
   );
