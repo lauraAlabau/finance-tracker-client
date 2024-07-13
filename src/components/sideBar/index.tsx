@@ -32,6 +32,52 @@ const Sidebar = ({
               <span className="ms-3">Dashboard</span>
             </Link>
           </li>
+          <li>
+            <Link
+              to="/incomes"
+              className="flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group"
+            >
+              <svg
+                className="w-5 h-5 transition duration-75 text-cyan-400 group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+                />
+              </svg>
+              <span className="ms-3">Incomes</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/expenses"
+              className="flex items-center p-2 text-white rounded-lg hover:bg-cyan-700 group"
+            >
+              <svg
+                className="w-5 h-5 transition duration-75 text-cyan-400 group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4.5V19a1 1 0 0 0 1 1h15M7 10l4 4 4-4 5 5m0 0h-3.207M20 15v-3.207"
+                />
+              </svg>
+              <span className="ms-3">Expenses</span>
+            </Link>
+          </li>
         </ul>
       </div>
     </aside>

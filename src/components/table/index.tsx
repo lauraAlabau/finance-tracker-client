@@ -16,8 +16,8 @@ import {
   CATEGORIES_OPTIONS,
   PAYMENT_METHOD_OPTIONS,
 } from "../../utils/contants";
-const Table = () => {
-  const { records, updateRecord, deleteRecord } = useFinanceContext();
+const Table = ({ records }: { records: FinanceRecord[] }) => {
+  const { updateRecord, deleteRecord } = useFinanceContext();
 
   const updateCellRecord = (rowIndex: number, columnId: string, value: any) => {
     const id = records[rowIndex]?._id;
