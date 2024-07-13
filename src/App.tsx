@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
-
+import { SignedOut } from "@clerk/clerk-react";
 import { Dashboard } from "./pages/dashboard";
-import { FinanceProvider } from "./contexts/financeContext";
 import { Home } from "./pages/home";
-import GenericLayout from "./components/genericLayout";
 import { Incomes } from "./pages/incomes";
 import { Expenses } from "./pages/expenses";
+import ProtectedRoute from "./components/protectedRoutes/intex";
 
 function App() {
   return (
@@ -17,13 +15,9 @@ function App() {
             path="/"
             element={
               <>
-                <SignedIn>
-                  <FinanceProvider>
-                    <GenericLayout>
-                      <Dashboard />
-                    </GenericLayout>
-                  </FinanceProvider>
-                </SignedIn>
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
                 <SignedOut>
                   <Home />
                 </SignedOut>
@@ -33,29 +27,17 @@ function App() {
           <Route
             path="/incomes"
             element={
-              <>
-                <SignedIn>
-                  <FinanceProvider>
-                    <GenericLayout>
-                      <Incomes />
-                    </GenericLayout>
-                  </FinanceProvider>
-                </SignedIn>
-              </>
+              <ProtectedRoute>
+                <Incomes />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/expenses"
             element={
-              <>
-                <SignedIn>
-                  <FinanceProvider>
-                    <GenericLayout>
-                      <Expenses />
-                    </GenericLayout>
-                  </FinanceProvider>
-                </SignedIn>
-              </>
+              <ProtectedRoute>
+                <Expenses />
+              </ProtectedRoute>
             }
           />
         </Routes>
