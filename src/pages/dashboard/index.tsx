@@ -65,16 +65,10 @@ export const Dashboard = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4 mt-8 mb-4">
-        <div className="flex items-center justify-center h-24 rounded">
-          <TotalCard amount={totalPrevMonth} text="Previous Month" />
-        </div>
-        <div className="flex items-center justify-center h-24 rounded">
-          <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
-        </div>
-        <div className="flex items-center justify-center h-24 rounded">
-          <TotalCard amount={totalAverage} text="Overall Budget" />
-        </div>
+      <div className="grid grid-cols-3 gap-4 mt-8 mb-4 lg:gap-8">
+        <TotalCard amount={totalPrevMonth} text="Previous Month" />
+        <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
+        <TotalCard amount={totalAverage} text="Overall Budget" />
       </div>
       <div className="w-full h-full mb-4 rounded lg:mt-20 lg:overflow-y-auto">
         <FinancesForm />
