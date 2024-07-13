@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 
-import { FinancesForm } from "./FinancesForm";
 import { useFinanceContext } from "../../contexts/financeContext";
 import TotalCard from "../../components/totalCard";
 import {
@@ -70,10 +69,8 @@ export const Dashboard = () => {
         <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
         <TotalCard amount={totalAverage} text="Overall Budget" />
       </div>
+
       <div className="w-full h-full mb-4 rounded lg:mt-20 lg:overflow-y-auto">
-        <FinancesForm />
-      </div>
-      <div className="w-full h-full mb-4 rounded lg:mt-10 lg:overflow-y-auto">
         <Table />
       </div>
     </div>

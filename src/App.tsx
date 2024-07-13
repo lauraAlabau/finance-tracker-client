@@ -16,11 +16,11 @@ function App() {
             element={
               <>
                 <SignedIn>
-                  <GenericLayout>
-                    <FinanceProvider>
+                  <FinanceProvider>
+                    <GenericLayout>
                       <Dashboard />
-                    </FinanceProvider>
-                  </GenericLayout>
+                    </GenericLayout>
+                  </FinanceProvider>
                 </SignedIn>
                 <SignedOut>
                   <Home />

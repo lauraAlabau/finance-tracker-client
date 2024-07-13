@@ -7,9 +7,16 @@ import { Dispatch, SetStateAction } from "react";
 export interface NavbarProps {
   sideMenuIsExpand: boolean;
   setSideMenuIsExpand: Dispatch<SetStateAction<boolean>>;
+  formIsOpen: boolean;
+  setFormIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Navbar = ({ sideMenuIsExpand, setSideMenuIsExpand }: NavbarProps) => {
+const Navbar = ({
+  sideMenuIsExpand,
+  setSideMenuIsExpand,
+  formIsOpen,
+  setFormIsOpen,
+}: NavbarProps) => {
   return (
     <nav className="fixed top-0 z-50 w-full bg-[#081028] border-b border-slate-950">
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
@@ -44,58 +51,22 @@ const Navbar = ({ sideMenuIsExpand, setSideMenuIsExpand }: NavbarProps) => {
                 className="h-6 me-3 sm:h-7"
                 alt="BudgetBuddy Logo"
               />
-              <span className="text-xl font-semibold text-cyan-300 whitespace-nowrap">
+              <span className="text-sm font-semibold lg:text-xl text-cyan-300 whitespace-nowrap">
                 Budget<span className="text-[#CB3EFF]">Buddy</span>
               </span>
             </Link>
           </div>
           <div className="flex items-center">
             <div className="flex items-center ms-3">
+              <span className="sr-only">Open form add record</span>
+              <button
+                className="px-4 py-2 mr-6 text-sm rounded-lg bg-cyan-600 hover:bg-cyan-500"
+                onClick={() => setFormIsOpen(!formIsOpen)}
+              >
+                Add Record
+              </button>
               <div>
                 <UserButton />
-              </div>
-              <div
-                className="z-50 hidden my-4 text-base list-none bg-white divide-y rounded shadow divide-cyan-100 dark:bg-cyan-700 dark:divide-cyan-600"
-                id="dropdown-user"
-              >
-                <ul className="py-1" role="none">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-cyan-700 hover:bg-cyan-100 dark:text-cyan-300 dark:hover:bg-cyan-600 dark:hover:text-white"
-                      role="menuitem"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-cyan-700 hover:bg-cyan-100 dark:text-cyan-300 dark:hover:bg-cyan-600 dark:hover:text-white"
-                      role="menuitem"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-cyan-700 hover:bg-cyan-100 dark:text-cyan-300 dark:hover:bg-cyan-600 dark:hover:text-white"
-                      role="menuitem"
-                    >
-                      Earnings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-cyan-700 hover:bg-cyan-100 dark:text-cyan-300 dark:hover:bg-cyan-600 dark:hover:text-white"
-                      role="menuitem"
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
