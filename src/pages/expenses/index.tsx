@@ -1,15 +1,16 @@
-import { useFinanceContext } from "../../contexts/financeContext";
-import TotalCard from "../../components/totalCard";
-
 import PrimaryCard from "../../components/primaryCard";
 import Table from "../../components/table";
+import TotalCard from "../../components/totalCard";
+import { useFinanceContext } from "../../contexts/financeContext";
 import cards from "../../utils/cards";
 
-export const Dashboard = () => {
+export const Expenses = () => {
   const { records } = useFinanceContext();
 
+  const expenses = records.filter((record) => record.amount < 0);
+
   const { totalAverage, totalCurrentMonth, totalPrevMonth } = cards({
-    records,
+    records: expenses,
   });
 
   return (
@@ -19,9 +20,8 @@ export const Dashboard = () => {
         <PrimaryCard amount={totalCurrentMonth} text="Current Month" />
         <TotalCard amount={totalAverage} text="Overall Budget" />
       </div>
-
-      <div className="w-full h-full mb-4 rounded lg:mt-20 lg:overflow-y-auto">
-        <Table records={records} />
+      <div className="w-full h-full mb-4 rounded lg:mt-10 lg:overflow-y-auto">
+        <Table records={expenses} />
       </div>
     </div>
   );

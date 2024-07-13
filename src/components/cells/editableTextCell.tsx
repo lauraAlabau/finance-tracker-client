@@ -33,10 +33,12 @@ export const EditableTextCell = ({
           onChange={(e) => setValue(e.target.value)}
           autoFocus
           onBlur={onBlur}
-          className="w-full p-2.5 bg-transparent border border-teal-100 rounded-md text-slate-50"
+          className="max-w-40 p-2.5 bg-transparent font-bold text-slate-50 focus-visible:ring-0 focus-visible:outline-0"
         />
       ) : (
-        <div className="p-2.5 w-full">{String(value)}</div>
+        <div className="max-w-40 p-2.5 whitespace-break-spaces">
+          {String(value)}
+        </div>
       )}
     </div>
   );
