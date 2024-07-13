@@ -10,14 +10,13 @@ import {
   EditableNumberCell,
   EditableSelectCell,
   EditableTextCell,
-} from "../../components/cells";
+} from "../cells";
 import { formatDate } from "date-fns";
 import {
   CATEGORIES_OPTIONS,
   PAYMENT_METHOD_OPTIONS,
 } from "../../utils/contants";
-
-export const FinancesTable = () => {
+const Table = () => {
   const { records, updateRecord, deleteRecord } = useFinanceContext();
 
   const updateCellRecord = (rowIndex: number, columnId: string, value: any) => {
@@ -25,17 +24,19 @@ export const FinancesTable = () => {
     updateRecord(id ?? "", { ...records[rowIndex], [columnId]: value });
   };
 
-  const columns: Array<Column<FinanceRecord>> = useMemo(
+  const columns: Column<FinanceRecord>[] = useMemo(
     () => [
       {
         Header: "Description",
         accessor: "description",
         Cell: (props) => (
-          <EditableTextCell
-            {...props}
-            updateRecord={updateCellRecord}
-            editable={true}
-          />
+          <div className="text-slate-100">
+            <EditableTextCell
+              {...props}
+              updateRecord={updateCellRecord}
+              editable={true}
+            />
+          </div>
         ),
       },
       {
@@ -88,7 +89,7 @@ export const FinancesTable = () => {
         Cell: ({ row }) => (
           <button
             onClick={() => deleteRecord(row.original._id ?? "")}
-            className="lg:pr-2"
+            className="lg:pr-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -118,18 +119,15 @@ export const FinancesTable = () => {
     });
 
   return (
-    <div className="overflow-x-auto">
-      <table
-        {...getTableProps()}
-        className="w-full mt-5 border-collapse shadow-md"
-      >
+    <div className="overflow-x-auto text-sm border border-slate-700 text-slate-300">
+      <table {...getTableProps()} className="w-full border-collapse shadow-md">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps()}
-                  className="px-4 py-3 text-base text-left bg-teal-800 first-of-type:rounded-tl-md last-of-type:rounded-tr-md text-teal-50"
+                  className="py-6 px-2 bg-[#0B1739] text-base font-normal text-slate-50 text-left first-of-type:pl-8 border-b border-slate-700"
                 >
                   {column.render("Header")}
                 </th>
@@ -143,10 +141,13 @@ export const FinancesTable = () => {
             return (
               <tr
                 {...row.getRowProps()}
-                className="border-b border-teal-800/40 bg-teal-800/10"
+                className=" bg-[#0A1330] odd:bg-[#0B1739]"
               >
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className="px-4 py-3 text-left">
+                  <td
+                    {...cell.getCellProps()}
+                    className="py-3 text-left first-of-type:pl-6 max-w-40"
+                  >
                     {cell.render("Cell")}
                   </td>
                 ))}
@@ -158,3 +159,4 @@ export const FinancesTable = () => {
     </div>
   );
 };
+export default Table;

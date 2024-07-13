@@ -9,7 +9,7 @@ import GenericLayout from "./components/genericLayout";
 function App() {
   return (
     <Router>
-      <div className="items-center min-h-screen bg-[#070E23] text-slate-50">
+      <div className="items-center min-h-screen bg-[#070E23] text-slate-50 cursor-default">
         <Routes>
           <Route
             path="/"
