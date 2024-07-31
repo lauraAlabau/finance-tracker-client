@@ -1,6 +1,6 @@
 # Finance Tracker Client
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Ffinance-tracker-cli.vercel.app)]([https://finance-tracker-cli.vercel.app](https://finance-tracker-cli.vercel.app/))
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Ffinance-tracker-cli.vercel.app)](https://finance-tracker-cli.vercel.app)
 [![TypeScript](https://img.shields.io/badge/TypeScript-96.4%25-blue)](#)
 [![JavaScript](https://img.shields.io/badge/JavaScript-1.6%25-yellow)](#)
 
