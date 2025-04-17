@@ -16,7 +16,7 @@ Finance Tracker Client is a web application for managing and tracking personal f
 - User authentication
 - Responsive and user-friendly interface
 
-## Installation
+## Getting Started
 
 1. Clone the repository:
     ```bash
@@ -29,7 +29,14 @@ Finance Tracker Client is a web application for managing and tracking personal f
     yarn install
     ```
 
-3. Start the application:
+3. Environment variables
+Create a .env file in the root with the following content:
+    ```bash
+    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    VITE_BACKEND_URL=http://localhost:4000
+    ```
+    
+4. Start the application:
     ```bash
     yarn dev
     ```
@@ -39,13 +46,33 @@ Finance Tracker Client is a web application for managing and tracking personal f
 - `yarn dev`: Starts the development server.
 - `yarn build`: Builds the app for production.
 - `yarn lint`: Runs ESLint to analyze the code.
+- `yarn preview`: Previews the production build.
 
 ## Configuration
 
 Make sure to configure the necessary configuration files:
-- `tsconfig.json`
-- `vite.config.ts`
-- `tailwind.config.js`
+- `tsconfig.json` – TypeScript configuration
+- `vite.config.ts` – Vite bundler setup
+- `tailwind.config.js` – Tailwind CSS setup
+- `.env` – Environment variables for auth and backend
+
+## Project Structure
+```bash
+finance-tracker-client/
+├── public/                 
+├── src/
+│   ├── assets/             # Static assets
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Page-level components
+│   ├── contexts/           # Custom Context
+│   ├── utils/              # Utility functions
+│   ├── App.tsx             # App shell
+│   └── main.tsx            # Entry point
+├── .eslintrc.cjs           # ESLint config
+├── tailwind.config.js      # Tailwind CSS config
+├── vite.config.ts          # Vite config
+└── package.json            # Project metadata and scripts
+```
 
 ## Technologies Used
 
@@ -53,6 +80,12 @@ Make sure to configure the necessary configuration files:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Clerk](https://clerk.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Router](https://reactrouter.com/)
+- [React Table](https://tanstack.com/table/latest)
+- [date-fns](https://date-fns.org/)
+- [ESLint](https://eslint.org/)
 
 ## Contributing
 
