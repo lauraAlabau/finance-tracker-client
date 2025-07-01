@@ -188,21 +188,21 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@clerk/clerk-react@^5.32.0":
-  version "5.32.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.32.0.tgz#29200d3f6e850f4886617025840db59318097431"
-  integrity sha512-RdipOVBdbUbFaDb8kF3EzhJw0eh5LPxSWWRTu4k+pOdRB1gzETiToLchj5nDWFkl8qW/uL4gQbZH+Pfc7izO0A==
+"@clerk/clerk-react@^5.32.3":
+  version "5.32.3"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.32.3.tgz#4b48b2f22f6ce6ea587a1d500bf5e731fd2047b8"
+  integrity sha512-u+D/2G6DFK+UoiVVGblkhBFygxZs4lzYyT0MxJdNIzhbWyFM2bcKPRoWrf0cl8Rj2VAXVlLsA0hN/a512bOzjg==
   dependencies:
-    "@clerk/shared" "^3.9.7"
-    "@clerk/types" "^4.60.1"
+    "@clerk/shared" "^3.10.1"
+    "@clerk/types" "^4.62.1"
     tslib "2.8.1"
 
-"@clerk/shared@^3.9.7":
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.9.7.tgz#c9da840e9d7022f58120302b3e06150c4d8b9903"
-  integrity sha512-D3iuzuDoadK6BKb7qFZEH332z4Sl5mxLuHMf8rKdIMHuOu1RQK0RqFJtKPcFvDxq0RvJ9MC+rK24P2Sa2tOoNA==
+"@clerk/shared@^3.10.1":
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.10.1.tgz#a59d267c1ad71a3a3b21c976da7dec22f630137c"
+  integrity sha512-V3MFEja75qcH7MHdZ8OUo+ndQK+ivGcIQHSeDpnIAvVRXWjYy8JDpS/tYwt81FW8hgq/WcxT1rpEd27XUKrrNg==
   dependencies:
-    "@clerk/types" "^4.60.1"
+    "@clerk/types" "^4.62.1"
     dequal "2.0.3"
     glob-to-regexp "0.4.1"
     js-cookie "3.0.5"
@@ -217,10 +217,10 @@
     "@clerk/types" "^4.60.1"
     tslib "2.8.1"
 
-"@clerk/types@^4.60.1":
-  version "4.60.1"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.60.1.tgz#afc3c75450a73afcaf949ead08faf3a47070929b"
-  integrity sha512-Lbt0/Q9W9BJtGz1IITdmeqal7y1zp9EaxOEMvsTEDhOxKf/0F/M1d0gJmHEU0puQzYPp9zJsIWC2yJjbgy3Y3Q==
+"@clerk/types@^4.60.1", "@clerk/types@^4.62.1":
+  version "4.62.1"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.62.1.tgz#08b424d65fddd0eb03415edc18e2394303778645"
+  integrity sha512-qr0HrlM+VS/QEqjRP+1qSp2ipi+MrGGs/ih+HDqe0d/egfobFGGOg0Z759ZBE6Nd5WHWVTWWuFiilnfhJ8QqdQ==
   dependencies:
     csstype "3.1.3"
 
