@@ -188,26 +188,26 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@clerk/clerk-react@^5.32.0":
-  version "5.32.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.32.0.tgz#29200d3f6e850f4886617025840db59318097431"
-  integrity sha512-RdipOVBdbUbFaDb8kF3EzhJw0eh5LPxSWWRTu4k+pOdRB1gzETiToLchj5nDWFkl8qW/uL4gQbZH+Pfc7izO0A==
+"@clerk/clerk-react@^5.37.0":
+  version "5.37.0"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-5.37.0.tgz#7da915f3cfc9e533a21f262fa8a14377070ea87c"
+  integrity sha512-jJ7xSE8aqTmxzdAsz7UeBEIXXTTwpWJjMhxcuTDc8iTgR7RVKqmTtx910da+F0ewGE26RrgdR3PfTCF+0Fgj1A==
   dependencies:
-    "@clerk/shared" "^3.9.7"
-    "@clerk/types" "^4.60.1"
+    "@clerk/shared" "^3.15.1"
+    "@clerk/types" "^4.70.1"
     tslib "2.8.1"
 
-"@clerk/shared@^3.9.7":
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.9.7.tgz#c9da840e9d7022f58120302b3e06150c4d8b9903"
-  integrity sha512-D3iuzuDoadK6BKb7qFZEH332z4Sl5mxLuHMf8rKdIMHuOu1RQK0RqFJtKPcFvDxq0RvJ9MC+rK24P2Sa2tOoNA==
+"@clerk/shared@^3.15.1":
+  version "3.15.1"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-3.15.1.tgz#5198a70677b50099a058d374a08458b0f08c30c1"
+  integrity sha512-5k4ooQ5EsiboShv9W9LV1bK4PWiqqgqyBNxz5/GRnsdE+Ng2i+nbd0jP9eqCJSGIaar3Q9a1iE/zttIB8Uxi3Q==
   dependencies:
-    "@clerk/types" "^4.60.1"
+    "@clerk/types" "^4.70.1"
     dequal "2.0.3"
     glob-to-regexp "0.4.1"
     js-cookie "3.0.5"
     std-env "^3.9.0"
-    swr "^2.3.3"
+    swr "2.3.4"
 
 "@clerk/themes@^2.2.50":
   version "2.2.50"
@@ -217,10 +217,10 @@
     "@clerk/types" "^4.60.1"
     tslib "2.8.1"
 
-"@clerk/types@^4.60.1":
-  version "4.60.1"
-  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.60.1.tgz#afc3c75450a73afcaf949ead08faf3a47070929b"
-  integrity sha512-Lbt0/Q9W9BJtGz1IITdmeqal7y1zp9EaxOEMvsTEDhOxKf/0F/M1d0gJmHEU0puQzYPp9zJsIWC2yJjbgy3Y3Q==
+"@clerk/types@^4.60.1", "@clerk/types@^4.70.1":
+  version "4.70.1"
+  resolved "https://registry.yarnpkg.com/@clerk/types/-/types-4.70.1.tgz#434e3340963c0089f0b0fc55473db667e364c05c"
+  integrity sha512-AfaNAxVQlH+ekHUa2TLRsTkqkE01bxwK1xw07/uE4qzx2rs5oaH76AnZVBoiBIUQK7cCnZ2Tk2s563RJIK6kSA==
   dependencies:
     csstype "3.1.3"
 
@@ -1928,10 +1928,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-swr@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/swr/-/swr-2.3.3.tgz"
-  integrity sha512-dshNvs3ExOqtZ6kJBaAsabhPdHyeY4P2cKwRCniDVifBMoG/SVI7tfLWqPXriVspf2Rg4tPzXJTnwaihIeFw2A==
+swr@2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.3.4.tgz#60bcb5b97cae157a6ef69eff0ed2beb9010eba69"
+  integrity sha512-bYd2lrhc+VarcpkgWclcUi92wYCpOgMws9Sd1hG1ntAu0NEy+14CbotuFjshBU2kt9rYj9TSmDcybpxpeTU1fg==
   dependencies:
     dequal "^2.0.3"
     use-sync-external-store "^1.4.0"
